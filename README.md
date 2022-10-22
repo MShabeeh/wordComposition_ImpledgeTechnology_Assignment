@@ -28,14 +28,21 @@ Output
  Second Longest Compound Word: electroencephalographically 
  
  
-// Approach
+ Approach
  
  Intuition and Algorithm
  
-A concatenated word must be formed by 2 or more shorter words. We will iterate through each word and see if this is a concatenated word.
+A concatenated word must be formed by 2 or more shorter words. We will iterate through each word and see if this is a concatenated word for first and second largest and find the time taken to process the input file.
 
-Let's try for a dynamic programming (DP) solution. Given the input
+Let's try for a dynamic programming (DP) solution. Approaching steps
+1.Chrono header is added for find the current time, we find the current time in starting and ending stage subtracting which we got the time taken to process the file.
 
-Words = ["cat","cats","catsdogcats","dog","dogcatsdog","hippopotamuses","rat","ratcatdogcat"]
-We are going to check, for example, if the word W = ratcatdogcat is concatenated.
-Given a prefix of size K of the word W, dp[k] returns a boolean if this prefix can be formed by other words in the dictionary
+2.File is read and all element of file is stored in a vector v.
+
+3. Unordered_set is used to remove duplication of the variable.
+
+4. V is sorted in descending order and now each element of v is searched if it is created by concatenating with more than one word and if it is found than it is printed out and count is increased by one when count become 2 the loop breaks.
+
+5.The searching of concatenation is done through top-down DP with memoization.Its code is defining the approach.
+
+6.At the end processing time is calculated and printed.
